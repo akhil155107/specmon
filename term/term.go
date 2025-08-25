@@ -694,7 +694,7 @@ func unify(a1, a2 Term, b *Binding) error {
 			return ErrConstantByteConversion
 		}
 
-		formatBinding, err := ParseFormat(fields, bytes)
+		formatBinding, err := ParseFormatWithFandango(fields, bytes)
 		if err != nil {
 			// FIXME: err.Error() allocates a significant amount of memory.
 			// return &UnificationError{a1, a2, err.Error()}
